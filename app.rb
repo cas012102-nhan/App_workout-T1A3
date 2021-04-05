@@ -1,16 +1,16 @@
 require 'tty-prompt'
 require 'colorize'
 
-# @plans = ["One-month", "Three-month", "Six-month", "Yearly" ]
+
 puts "Welcome to Fitness App".red
+puts ".........."
 prompt = TTY::Prompt.new
 prompt.ask("What is your name?")
+puts ""
 prompt.ask("How old are you?")
+puts ""
 prompt.yes?("Do you want to check BMI?")
-# p "enter your weight:  kgs"
-# weight = gets.chomp.to_f
-# p "enter your height:  meters"
-# height = gets.chomp.to_f
+puts ""
 
 class Bmi
     attr_reader :weight, :height
@@ -29,14 +29,20 @@ class Bmi
         @weight / (@height * @height)
     end
 
-    # def to_s
-    #     return "Bmi:-W:#{@weight},-H#{@height}"
-    # end
-
 end
 bmi = Bmi.new(80, 1.7)
 bmi.add(80,1.7)
 p bmi.get_bmi 
+
+
+
+
+
+
+
+
+
+
 
 
 
