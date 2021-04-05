@@ -1,11 +1,11 @@
 require_relative '../app'
 describe Bmi do
     it 'should return BMI' do
-        weight = 65
+        weight = 60
         height = 1.65
-        measurement = weight / (height*height)
         bmi = Bmi.new(weight, height)
-        bmi.add_bmi(weight, height)
-        expect(bmi.measurement).to eq(measurement)
+        bmi.add(weight, height)
+        expect(bmi.get_bmi).to eq(weight/(height*height))
+
     end
 end
