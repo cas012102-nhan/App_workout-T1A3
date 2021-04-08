@@ -2,6 +2,7 @@ require_relative './app'
 require "colorize"
 require "tty-prompt"
 require "tty-box"
+require_relative './plan'
 print TTY::Box.frame "Welcome to Alien Fitness"
 
 prompt = TTY::Prompt.new
@@ -10,7 +11,7 @@ prompt.ask("How old are you?")
 prompt.yes?("Do you want to check BMI?")
 
 p "enter your weight: "
-weight = gets.chomp().to_f
+weight = gets.chomp.to_f
 p "enter you height: "
 height = gets.chomp().to_f
 
@@ -45,7 +46,6 @@ def tty
   "You chose #{plan} plan"
 end
 p tty
-
 
 
 
