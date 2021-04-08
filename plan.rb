@@ -1,22 +1,20 @@
 require_relative './bmi'
-# class Plan
-#     attr_accessor :price, :total_days
-# #     def initialize(price, totay_days)
-# #         @price = price
-# #         @total_days = total_days
-#    end
-# one_month = Plan.new()
-# three_month = Plan.new()
-# six_month = Plan.new()
-# p one_month.price = 60
-# p one_month.total_days = 12
-# p three_month.price = 190
-# p three_month.total_days = 36
-# p six_month.price = 720
-# p six_month.total_days = 72
+require "tty-box"
+# require_relative './module'
 
+module Discount
+    def discounted_price(x)
+        # x = [60, 360, 720]
+        puts "discounted price is $$ "
+        x * (1 - 0.2)
+        
+    end
+end
+
+ 
 
 class Plan
+    include Discount
     def initialize
         @plans = []
     end
@@ -25,21 +23,24 @@ class Plan
     end
 
     def give
-        puts "Please have a look at these #{@plans.length}plans below: "
+        puts "*****Please have a look at these #{@plans.length}plans below: *****"
+        puts "                      ..................                        "
         @plans.each do |plan|
-            puts "#{plan[:term]} months, cost $#{plan[:price]}, todal days of training #{plan[:total_days]}"
+            puts "- #{plan[:term]} months, cost $#{plan[:price]}, todal days of training #{plan[:total_days]} days"
         end
     end
 
 end
 a = Plan.new
 a.add("one", 60, 12)
-a.add("three", 240, 20)
+a.add("three", 360, 20)
 a.add("six", 720, 50)
 a.give
 
+print box = TTY::Box.info("20% - 6 months plan") 
 
-        
+include Discount
+p Discount.discounted_price(60)
 
 
 

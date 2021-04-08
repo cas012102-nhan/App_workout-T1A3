@@ -36,16 +36,10 @@ elsif a > 30
 else
     puts "Invalid"
 end
-p"............"
-# p "Choose the following workout plans"
-
-# @plans = ["One-month","Three-month","Six-month"]
-# def tty
-#   prompt = TTY::Prompt.new
-#   plan = prompt.select("plan", @plans) 
-#   "You chose #{plan} plan"
-# end
-# p tty
+p"                      ............                 "
+p"                      ............                 "
+p"                      ............                 "
+p"                      ............                 "
 
 
 
