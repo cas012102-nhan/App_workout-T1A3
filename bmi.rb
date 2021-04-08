@@ -9,10 +9,10 @@ prompt = TTY::Prompt.new
 prompt.ask("What is your name?")
 prompt.ask("How old are you?") 
 prompt.yes?("Do you want to check BMI?")
-
-p "enter your weight: "
+puts "                                        "
+puts "enter your weight: "
 weight = gets.chomp.to_f
-p "enter you height: "
+puts  "enter you height: "
 height = gets.chomp().to_f
 
 
@@ -36,10 +36,10 @@ elsif a > 30
 else
     puts "Invalid"
 end
-p"                      ............                 "
-p"                      ............                 "
-p"                      ............                 "
-p"                      ............                 "
+puts"                      ............                 "
+puts"                      ............                 "
+puts"                      ............                 "
+puts"                      ............                 "
 
 
 
