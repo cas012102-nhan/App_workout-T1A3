@@ -1,8 +1,8 @@
-require_relative './app'
+# require_relative './plan'
 require "colorize"
 require "tty-prompt"
 require "tty-box"
-require_relative './plan'
+
 print TTY::Box.frame "Welcome to Alien Fitness"
 
 prompt = TTY::Prompt.new
@@ -37,16 +37,15 @@ else
     puts "Invalid"
 end
 p"............"
-p "Choose the following workout plans"
+# p "Choose the following workout plans"
 
-@plans = ["One-month","Three-month","Six-month"]
-def tty
-  prompt = TTY::Prompt.new
-  plan = prompt.select("plan", @plans) 
-  "You chose #{plan} plan"
-end
-p tty
-
+# @plans = ["One-month","Three-month","Six-month"]
+# def tty
+#   prompt = TTY::Prompt.new
+#   plan = prompt.select("plan", @plans) 
+#   "You chose #{plan} plan"
+# end
+# p tty
 
 
 
