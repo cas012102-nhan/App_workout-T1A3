@@ -11,7 +11,7 @@ print TTY::Box.frame "Welcome to Alien Fitness"
     age = gets.chomp.to_i
     puts "Enter you weight: ".red
     weight = gets.chomp.to_f
-    puts "Enter your height: ".red
+    puts "Enter your height(in meters): ".red
     height = gets.chomp.to_f
     bmi = weight / (height * height)
     puts "Hi #{name}, your BMI is #{bmi}".red
@@ -42,64 +42,66 @@ print TTY::Box.frame "Welcome to Alien Fitness"
     class Plans
         attr_accessor :price, :plans
        
-        def initialize(price)
+        def initialize
             @price = price
             @plans = []
         end
 
-        def add(total_days, days_in_a_week)
-            @plans << {term: total_days, weekly_training_days: days_in_a_week }
+        
+        def self.discount
+            box = TTY::Box.info("20% BUY NOW")
+            
+        end
+
+        def add(total_days, dollars, days_in_a_week)
+            @plans << {term: total_days, price:dollars, weekly_training_days: days_in_a_week }
         end
 
         def run
             puts "Please have a look at the workout plans below: ".yellow
-            puts " #{@plans.length} Plans: ".red
+            puts "     "
+            puts " -----------------#{@plans.length} Plans:------------ ".blue
             @plans.each do |plan|
-            puts "***#{plan[:term]} ".green
-            puts "Total weekly training sessions are: #{plan[:weekly_training_days]}".green
-            puts "   ..   "
+            puts "             #{plan[:term]} / total :$#{plan[:price]}                     ".green
+            puts "          Discounted price is: $#{plan[:price] * 0.8}".red
+            puts " Total weekly training sessions are: #{plan[:weekly_training_days]}"
+            puts "      "
             end
         end
-           
+
         def tty
-                puts "          +++++++++++++++++++++++++++++            ".blue
-                puts "which plans would you like to choose?".yellow
-                prompt = TTY::Prompt.new
-                choice = prompt.select("Plans", @plans).red
+            puts "                                                   "
+            puts "                                                   "
+            puts "Which plans would you like to choose?".yellow
+            prompt = TTY::Prompt.new
+            @plants = prompt.select("Plans", @plans) do |plan|
             end
         end
-
-        # def chose
-        #     puts "   ..   "
-        #     if @plans = @plans[0]
-        #         puts "You choose One-month package"
-        #     elsif @plans = @plan[1]
-        #     puts "You choose Three-month package"
-        #     else @plans = @plan[2]
-        #         puts "You choose Six-month package"
-
-        #     end
-        # end
-
-      
-        # def discounted
-        #     price * (1 - 0.2)
-        # end
-
-  
-     
-        
-    plans = Plans.new(60)
-        
-    plans.add("One_month", "3 days" )
-    plans.add("Three_month", "2 days" )
-    plans.add("Six_month", "2 days" )  
-    puts plans.run
-    puts plans.tty
-
-
-
+        def pay
+            @plans.each do |plan|
+            puts "Your total is : $#{plan[:price] * 0.8}".red
+            end
+        end
     end
+
+           
+           
+    plans = Plans.new
+    plans.add("One_month", 60, "3 days" )
+    plans.add("Three_month", 190, "4 days" )
+    plans.add("Six_month", 400, "5 days" ) 
+    puts Plans.discount
+    puts plans.run
+  
+    puts plans.tty
+    puts plans.pay
+
+   
+  
+
+ 
+  
+ end
 
 
         
