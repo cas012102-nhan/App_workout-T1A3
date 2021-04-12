@@ -26,20 +26,21 @@ This app is the simplest one ever. It is an Ask and Answer app. Users just need 
 
 
 ## Implementation plan and design
-Trello
+! [Trello](Trello.png)
 
 ## Flowchart
-
-
+! [flowchart](chart.png)
 
 ## Step to install the application:
-Follow this link to clone the code or to check the working progress.
+* Follow this link to clone the code or to check the working progress.
 https://github.com/cas012102-nhan/App_workout-T1A3
 
-Install bundler
-Install these Ruby gems tty-prompt, tty-box, and colorize. 
-Steps : gem install ‘tty-prompt’
-gem list (to check if the gem file is installed or not)
+* Install bundler
+Install these Ruby gems : tty-prompt, tty-box, and colorize. 
+for example: Steps 
+1. gem install ‘tty-prompt’
+2. gem list (to check if the gem file is installed or not)
+
 
 
 
