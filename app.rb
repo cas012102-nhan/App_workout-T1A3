@@ -40,6 +40,8 @@ print TTY::Box.frame "Welcome to Alien Fitness"
     puts "                  .....                 "
 
     class Plans
+   
+      
         attr_accessor :price, :plans
        
         def initialize
@@ -56,6 +58,8 @@ print TTY::Box.frame "Welcome to Alien Fitness"
         def add(total_days, dollars, days_in_a_week)
             @plans << {term: total_days, price:dollars, weekly_training_days: days_in_a_week }
         end
+
+      
 
         def run
             puts "Please have a look at the workout plans below: ".yellow
@@ -77,12 +81,16 @@ print TTY::Box.frame "Welcome to Alien Fitness"
             @plants = prompt.select("Plans", @plans) do |plan|
             end
         end
-        def pay
-            @plans.each do |plan|
-            puts "Your total is : $#{plan[:price] * 0.8}".red
-            end
-        end
+        
+
+     
+
+  
+
+     
+        
     end
+
 
            
            
@@ -94,14 +102,10 @@ print TTY::Box.frame "Welcome to Alien Fitness"
     puts plans.run
   
     puts plans.tty
-    puts plans.pay
 
-   
-  
 
- 
-  
- end
+
+end
 
 
         

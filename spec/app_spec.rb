@@ -1,5 +1,5 @@
-require_relative './module'
-
+require_relative './app'
+require 'rspec'
 
 
 

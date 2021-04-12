@@ -1,9 +1,11 @@
 # require_relative './app'
-# module Discount
-#     x = [60 , 150, 300]
-#     def discounted_price
-#         return x * (1 - 0.2)
-        
+# module Calculation
+#     def pay
+#         @plants.select do |plan|
+#         puts "Your total is : $#{plan[:price] * 0.8}".red
+#         end
 #     end
-    
 # end
+
+# include Calculation
+# puts Calculation.pay
