@@ -81,15 +81,9 @@ print TTY::Box.frame "Welcome to Alien Fitness"
             @plants = prompt.select("Plans", @plans) do |plan|
             end
         end
-        
+     end
 
-     
-
-  
-
-     
-        
-    end
+    
 
 
            
@@ -100,8 +94,9 @@ print TTY::Box.frame "Welcome to Alien Fitness"
     plans.add("Six_month", 400, "5 days" ) 
     puts Plans.discount
     puts plans.run
-  
     puts plans.tty
+ 
+    
 
 
 
@@ -115,50 +110,4 @@ end
 
 
    
-
-# class Plan
-#     def initialize
-#         @plans = []
-#     end
-
-#     def add(total_days, dollars, days_in_a_week)
-#         @plans << {term: total_days, price: dollars, weekly_training_days: days_in_a_week }
-#     end
-    
-#     def return
-#         puts "Please have a look at the workout plans below: ".yellow
-#         puts " #{@plans.length} Plans: ".red
-#         @plans.each do |plan|
-#             puts "***#{plan[:term]} ".green
-#             puts "Price = $ #{plan[:price]}".green
-#             puts "Total weekly training sessions are: #{plan[:weekly_training_days]}".green
-#             puts "   ..   "
-#         end
-
-#     end
-
-  
-# end
-# plan = Plan.new
-# plan.add("One_month", 60, "3 days" )
-# plan.add("Three_month", 150, "2 days" )
-# plan.add("Six_month", 300, "2 days" )
-# puts plan.return
-
-# box = TTY::Box.info("Discount 20%")
-# puts box
-
-# module Discount 
-#     def discounted
-#         price = 300
-#         print "Plan Six_month discounted price is $ ".yellow
-#         return price * (1 - 0.2)
-#     end
-# end
-# include Discount
-# puts Discount.discounted
-
-
-
-# end
 
