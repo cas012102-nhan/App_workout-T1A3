@@ -1,4 +1,5 @@
-# require_relative './plan'
+# require_relative './module'
+require_relative './hash'
 require "colorize"
 require "tty-prompt"
 require "tty-box"
@@ -46,7 +47,7 @@ print TTY::Box.frame "Welcome to Alien Fitness"
        
         def initialize
             @price = price
-            @plans = []
+            @plans = [] 
         end
 
         
@@ -78,29 +79,55 @@ print TTY::Box.frame "Welcome to Alien Fitness"
             puts "                                                   "
             puts "Which plans would you like to choose?".yellow
             prompt = TTY::Prompt.new
-            @plants = prompt.select("Plans", @plans) do |plan|
+            @plants = prompt.select("Plans") do |plan|
+                plan.choice 'One-month'
+                plan.choice 'Three-month'
+                plan.choice 'Six-month'
             end
-        end
-     end
+            
+            if @plants == "One-month"
+                puts "You chose One-month plan"
+            elsif @plants == "Three-month"
+                puts "You chose Three-month plan"
+            elsif  @plants == "One-month"
+                puts "You chose Six-month plan"
+            else
+                puts "Invalid"
+            end
+        end 
 
-    
+       
+      
 
+        def payment
+            puts "Do you want to process payment? yes/no".yellow
+            yes = true
+            while true
+                c = gets.chomp
+                if c == "no"
+                    yes = false
+                    puts "Bye"
+                    break
+                end
+            end
 
-           
-           
-    plans = Plans.new
+        end  
+      
+
+       
+    end
+     plans = Plans.new
     plans.add("One_month", 60, "3 days" )
     plans.add("Three_month", 190, "4 days" )
     plans.add("Six_month", 400, "5 days" ) 
+  
     puts Plans.discount
     puts plans.run
     puts plans.tty
+    puts plans.payment
  
-    
-
-
-
 end
+
 
 
         
