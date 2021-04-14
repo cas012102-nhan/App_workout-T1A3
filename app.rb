@@ -1,5 +1,5 @@
 # require_relative './module'
-require_relative './hash'
+
 require "colorize"
 require "tty-prompt"
 require "tty-box"
@@ -95,23 +95,6 @@ print TTY::Box.frame "Welcome to Alien Fitness"
                 puts "Invalid"
             end
         end 
-
-       
-      
-
-        def payment
-            puts "Do you want to process payment? yes/no".yellow
-            yes = true
-            while true
-                c = gets.chomp
-                if c == "no"
-                    yes = false
-                    puts "Bye"
-                    break
-                end
-            end
-
-        end  
       
 
        
@@ -124,7 +107,8 @@ print TTY::Box.frame "Welcome to Alien Fitness"
     puts Plans.discount
     puts plans.run
     puts plans.tty
-    puts plans.payment
+  
+
  
 end
 

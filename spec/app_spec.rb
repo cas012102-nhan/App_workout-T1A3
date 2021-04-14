@@ -1,6 +1,6 @@
 require_relative '../module'
 
-# require_relative '../app'
+require_relative '../hash'
 require "rspec"
 
 describe Games do
@@ -19,3 +19,4 @@ describe 'discounted' do
         expect(games.discount(price)).to eq(discounted_price)
      end
 end
+
